@@ -1,0 +1,6 @@
+#!/bin/bash
+echo What is your favorite color?
+read color
+echo What is your favorite animal?
+read animal
+echo $color $animal
