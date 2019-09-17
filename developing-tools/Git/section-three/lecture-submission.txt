@@ -1,8 +1,8 @@
-1. 
-2.
-3. 
-4. 
-5.
-6. 
-7. 
-8. 
+1. Show what revision and author last modified each line of file 
+2. Remove untracked files from working tree
+3. Stash the changes in a dirty working directory away
+4. git commit --amend: modify the most recent commit
+5. Shows one or more objects
+6. Prints lines matching a pattern
+7. Uses binary search to find the commit that introduced a bug
+8. Inspects what is about to be committed for spelling errors and to make sure tests run
