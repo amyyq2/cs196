@@ -1,5 +1,5 @@
-1.
-2a.
-2b.
-3.
-4.
+1. Delete the conflict markers and make your changes. do git add . then git commit -m " "
+2a. Sudo allows you to run any other terminal command as the superuser. It can be dangerous because it gives you a lot of power over the system and you can cause the stystem to be unusable
+2b. You can add a repository manually or type sudo apt-get install -f
+3. Run git add, git stash, then git pull
+4. Switch to the head branch and do git pull, then switch your branch and git push. Or do git push --not-thin
