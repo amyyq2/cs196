@@ -7,3 +7,4 @@
 |Fizz buzz| 1|1|
 |Animal Names| 1|1|
 |Animal Colors| 1|1|
+|Git I prelecture comprehension|3|3|
