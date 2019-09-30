@@ -11,3 +11,4 @@
 |Git I lecture activities|2|3|
 |Git II prelecture comprehension|2|2|
 |Git II lecture activities|3|5|
+|Git II Homework|2|2|
