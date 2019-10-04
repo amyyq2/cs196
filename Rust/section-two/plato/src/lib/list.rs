@@ -6,12 +6,13 @@ use std::io::Error;
 
 // Gets the current directory of the user
 pub fn get_current_directory() -> PathBuf {
-    // Fill me out !
+    let path = env::current_dir();
+    path.unwrap()
 }
-
 // Reads the contents of the current directory
 pub fn get_directory_contents(directory: &PathBuf) -> Result<ReadDir, Error> {
-    // Fill me out !
+    let path = fs::read_dir(directory);
+    return path;
 }
 
 #[cfg(test)]
