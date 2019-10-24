@@ -1,0 +1,1 @@
+Read the [unsafe features](https://doc.rust-lang.org/stable/book/ch19-01-unsafe-rust.html) section of the Rust book. Note -  it is only this section, not the enire chapter. 
