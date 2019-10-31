@@ -20,12 +20,16 @@ fn main() {
     }
 
     for data_segment in chunked_data {
-        // @TODO What do we do in here with threads ?
+	let t=thread::spawn(move|| {
+	    (data_segment, 1)
+	    });
+	children.push(t);
+
     }
 
     let mut word_tokens = vec![];
     for child in children {
-        let token = // @TODO What do we do here with threads ? 
+        let token = child.join().unwrap();
         word_tokens.push(token);
     }
 
