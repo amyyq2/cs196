@@ -1,0 +1,44 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 9e57e6ecd72a0e4c5bc92cee399660ce1d7f0e5c58dea32c4bd14ca8998af267
+
+name:           haskell-mp-part2
+version:        0.1.0.0
+description:    Part 2 for the haskell mp
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_haskell_mp_part2
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+
+test-suite haskell-mp-part2-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Lib
+      Paths_haskell_mp_part2
+  hs-source-dirs:
+      src
+      test
+  ghc-options: -Wall
+  build-depends:
+      QuickCheck
+    , base >=4.9 && <5
+    , test-framework
+    , test-framework-quickcheck2
+    , haskell-mp-part2
+  default-language: Haskell2010
