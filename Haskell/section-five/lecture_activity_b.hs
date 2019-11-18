@@ -12,4 +12,8 @@ main = do
     putStr (longLinesOnly contents)
 
 longLinesOnly :: String -> String
-longLinesOnly = undefined
+longLinesOnly s = 
+    let
+	xs = lines s
+	y = filter (\s -> (length s) < 9) xs
+    in unlines y
