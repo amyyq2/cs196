@@ -5,4 +5,6 @@ import Data.Char
 --- make main take in a file called "tweet.txt", and write to a file named "tweetlowercase.txt" the contents of tweet.txt, in all lowercase
 --- To run this, first compile it using `stack ghc lecture_activity_a.hs`
 --- Then run it by running `./lecture_activity_a`
-main = undefined
+main = do
+	myString <- readFile "tweet.txt"
+	writeFile "tweetlowercase.txt" (map (\c -> toLower c) myString)
