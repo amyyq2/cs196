@@ -1,5 +1,5 @@
 import System.IO
-import Data.Char
+import Data.Char (isSpace)
 import System.Environment
 --- Write the main method and a function that takes in a text from standard input,
 --- removes all punctuation and writes back all the input in a single line (remove new lines) to a file specified by the application parameter
@@ -7,4 +7,10 @@ import System.Environment
 --- Then run `cat tweet.txt | ./lecture_activity_c single_line.txt`
 --- Note, that single_line.txt is the file to write the output to, but your code should be able to write to any file specified
 
-main = undefined
+main = do
+	text <- getContents
+	writeFile "single_line.txt" (removePunc (text))
+
+removePunc :: String -> String
+removePunc [] = []
+removePunc xs = [ x | x <- xs, not (x `elem` "^W\n,.?!-:;\"\'") ]
