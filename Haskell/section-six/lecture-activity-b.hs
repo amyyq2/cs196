@@ -32,5 +32,21 @@ Thank you for using InfiniteCodeUIUC (TM)!
 
 
 import Control.Concurrent
+import Control.Monad
+import Data.Maybe
+import System.IO
 
-main = undefined
+main = do
+    c <- newEmptyMVar
+    hSetBuffering stdin NoBuffering
+    forkIO $ do
+      a <- getChar
+      putMVar c a
+      putStrLn $ "Thank you for using InfiniteCodeUIUC (TM)!"
+    wait c
+  where wait c = do
+          a <- tryTakeMVar c
+          if isJust a then return ()
+          else putStrLn "zero" >>
+               threadDelay 500000 >> wait c
+
