@@ -9,8 +9,15 @@ To test this, you can run "./lecture-activity-a textfile1.txt textfile2.txt"
 import Control.Concurrent
 import System.Environment
 
-main = undefined
+main = do
+    [source] <- getArgs
+    myString <- readFile source
+    firstPersons myString
 
 firstPersons :: String -> IO ()
-firstPersons = undefined
+firstPersons input =
+    let
+	s = words input
+	filteredList = filter (\x -> x `elem` ["I", "we", "me", "my", "us"]) s
+    in print (length filteredList)
 			
