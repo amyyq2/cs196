@@ -15,7 +15,12 @@ import Control.Concurrent
 import Text.Printf
 import Control.Monad
 
-main = undefined
+main = do
+    putStrLn "Enter a number"
+    num <- getLine
+    putStrLn ("Setting remainder for " ++ show(num) ++ " seconds")
+    threadDelay ((read num :: Int) * 10^6)
+    putStrLn ("Your time is up!" ++ "\BEL")
 
 -- you may wish to use this function
 setReminder :: String -> IO ()
