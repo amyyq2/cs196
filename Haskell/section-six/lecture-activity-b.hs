@@ -32,21 +32,19 @@ Thank you for using InfiniteCodeUIUC (TM)!
 
 
 import Control.Concurrent
-import Control.Monad
-import Data.Maybe
-import System.IO
+
+zero = do
+    putStrLn "zero"
+    zero
+
+one = do
+    putStrLn "one"
+    one
 
 main = do
-    c <- newEmptyMVar
-    hSetBuffering stdin NoBuffering
-    forkIO $ do
-      a <- getChar
-      putMVar c a
-      putStrLn $ "Thank you for using InfiniteCodeUIUC (TM)!"
-    wait c
-  where wait c = do
-          a <- tryTakeMVar c
-          if isJust a then return ()
-          else putStrLn "zero" >>
-               threadDelay 500000 >> wait c
+    putStrLn "Baginning Transmission: "
+    forkIO $ (zero)
+    forkIO $ (one)
+    getLine
+    putStrLn "Thank you for using InfiniteCodeUIUC (TM)"
 
