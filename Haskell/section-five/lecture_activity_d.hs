@@ -15,4 +15,6 @@ newGetLine = do
 	    s <- getLine
 	    return (c:s)
 
-main = undefined
+main = do
+	line <- newGetLine
+	putStrLn line
