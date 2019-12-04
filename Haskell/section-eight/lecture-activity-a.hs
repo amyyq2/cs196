@@ -8,7 +8,10 @@ import Control.Concurrent
 import Control.Monad (forever)
 import Control.Concurrent.Chan
 
-outputTheInput chan = undefined
+outputTheInput chan = do
+    forever $ do
+	text <- readChan chan
+	putStrLn text
 
 main :: IO ()
 main = do
