@@ -13,7 +13,11 @@ data Chan a
 
 
 newChan' :: IO (Chan a)
-newChan' = undefined
+newChan' = do
+    hole <- newEmptyMVar
+    readVar <- newMVar hole
+    writeVar <- newMVar hole
+    return (Chan readVar writeVar)
 
 
 dupChan' :: Chan a -> IO (Chan a)
