@@ -25,4 +25,9 @@ writeChan' (Chan _ writeVar) val = do
 
 -- <<readChan', this is the one that you do!
 readChan' :: Chan a -> IO a
-readChan' = undefined
+readChan' (Chan readVar _) = do
+    stream <- takeMVar readVar
+    Item val new <- readMVar stream
+    putMVar readVar new
+    return val
+
