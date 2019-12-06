@@ -23,7 +23,11 @@ fullWords = undefined
 --- Hint hint, you will need to recursively call quicksort on these two sublists!
 
 quicksort :: (Ord a) => [a] -> [a]
-quicksort = undefined
+quicksort [] = []
+quicksort (x:xs) =
+    let lessThanXList = quicksort [a | a <- xs, a <= x]
+	greaterThanXList = quicksort [a | a <- xs, a > x]
+    in lessThanXList ++ [x] ++ greaterThanXList
 
 --- Create a recursive copy of the function "elem," called "elem'"
 --- Remember, "elem" checks for membership in a list, so for example
@@ -32,4 +36,6 @@ quicksort = undefined
 --- For the purposes of readability, it might be helpful for you to recursively call "elem'" with the infix operator!
 
 elem' :: (Eq a) => a -> [a] -> Bool
-elem' = undefined
+elem' x = any (== x)
+elem' _ [] = False
+elem' x (y:ys) = x==y || elem' x ys
