@@ -14,5 +14,8 @@ Try it with different numbers of threads to see how the time changes!
 import Control.Concurrent
 import System.Environment
 main = do
-        [start, end] <- getArgs
-        print 0
+	[start, end] <- getArgs
+	e <- newEmptyMVar
+	forkIO $ putMVar = (sum [(read start :: Integer)..(read end :: Integer)])
+	a <- takeMVar e
+	print (a)
