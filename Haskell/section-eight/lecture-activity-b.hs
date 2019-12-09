@@ -31,3 +31,15 @@ readChan' (Chan readVar _) = do
     putMVar readVar new
     return val
 
+secondThread chan = do
+    writeChan' chan "test"
+
+main :: IO ()
+main = do
+    hole <- newEmptyMVar
+    x <- newMVar hole
+    y <- newMVar hole
+    let chan = Chan x y
+    forkIO $ secondThread chan
+    text <- readChan' chan
+    putStrLn text
